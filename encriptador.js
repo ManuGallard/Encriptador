@@ -66,26 +66,34 @@ function encriptar() {
 
 function desencriptar() {
     let frase = document.getElementById('texto-encriptar').value;
+    palabraDesencriptada = '';
 
     if (validar()){
-        while (frase.includes('ai')  || frase.includes('enter') || frase.includes('imes') || frase.includes('ober') || frase.includes('ufat')) {
-            if (frase.includes('ai')) {
-                frase = frase.replace('ai', 'a');
-            }else if (frase.includes('enter')) {
-                frase = frase.replace('enter', 'e');
-            }else if (frase.includes('imes')) {
-                frase = frase.replace('imes', 'i');
-            }else if (frase.includes('ober')) {
-                frase = frase.replace('ober', 'o');
-            }else if (frase.includes('ufat')) {
-                frase = frase.replace('ufat', 'u');
+        for(letra = 0; letra < frase.length;letra++){
+            if (frase[letra] === 'a'){
+                palabraDesencriptada += 'a';
+                letra += 1;
+            } else if (frase[letra] === 'e'){
+                palabraDesencriptada += 'e';
+                letra += 4;
+            } else if (frase[letra] === 'i'){
+                palabraDesencriptada += 'i';
+                letra += 3;
+            } else if (frase[letra] === 'o'){
+                palabraDesencriptada += 'o';
+                letra += 3;
+            } else if (frase[letra] === 'u'){
+                palabraDesencriptada += 'u';
+                letra += 3;
+            } else {
+                palabraDesencriptada += frase[letra];
             }
         }
 
         limpiarCaja('texto-encriptar');
         ocultarElemento('mensaje__sin-encriptar');
         agregarClase('mensaje__encriptado', 'mensaje__encriptado--mostrar');
-        añadirTexto('texto-desencriptado', frase );
+        añadirTexto('texto-desencriptado', palabraDesencriptada );
         eliminarClase('texto-encriptar', 'advertencia');
         eliminarClase('textoAdevertencia', 'texto-rojo');
 
