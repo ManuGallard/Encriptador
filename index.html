@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="encriptador.js" defer></script>
+    <title>Encriptador</title>
+</head>
+<body>
+    <section class="logo">
+        <img src="img/Logo.png" alt="Logo de Alura">
+    </section>
+    <main>
+        <section class="container">
+            <section class="texto">
+                <textarea id="texto-encriptar" placeholder="Ingrese el texto aqui" class="texto__encriptar"></textarea>
+                <div class="texto__container">
+                    <p class="informacion" id="textoAdevertencia"><i class="fa-solid fa-circle-exclamation"></i> Solo letras en minúsculas y sin acentos</p>
+                    <div class="botones">
+                        <button class="boton b_encriptar" id="encriptar" onclick="encriptar()">Encriptar</button>
+                        <button class="boton b_desencriptar" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+                    </div>
+                </div>
+            </section>
+            <aside class="mensaje">
+                <div class="mensaje__encriptado" id="mensaje__encriptado">
+                    <p class="mensaje__encriptado--texto" id="texto-desencriptado"></p>
+                    <button class="boton b_copiar" id="copiar" onclick="copiar()">copiar</button>
+                </div>
+                <div class="mensaje__sin-encriptar" id="mensaje__sin-encriptar">
+                    <img src="img/Muñeco.png" alt="Imagen de una persona utilizando una lupa" class="mensaje__imagen">
+                    <p class="mensaje__noencontrado">Ningún mensaje fue encontrado</p>
+                    <p class="mensaje__ingresa">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>
